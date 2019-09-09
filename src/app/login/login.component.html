@@ -1,0 +1,548 @@
+<!-- 
+
+<main>
+    <div class="container-fluid page-body-wrapper">
+        <div class="main-panel">
+            <div class="content-wrapper bg">
+                <div class="row " style="position: relative;display:block;margin-left:5%;margin-top: 8%">
+                    <div class="col-sm-5" style="top:50%;position: absolute;">
+                        <div class="card" style="box-shadow: none !important;border:none !important;">
+                            <div class="card-body">
+                                <h4>Welcome to</h4>
+                                <h3><span style="color:#2368a0"><b>Agent</b></span> Portal</h3>
+                                <br><br>
+                                <form #login="ngForm" (ngSubmit)="onClickSubmit(login.value)" class="example-form">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Email" name="email"
+                                            [formControl]="emailFormControl">
+                                        <mat-error
+                                            *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                                            Please enter a valid User name
+                                        </mat-error>                                       
+                                    </mat-form-field>
+                                    <mat-form-field class="example-full-width">
+                                         <input matInput placeholder="Email" name="email"
+                                            [formControl]="emailFormControl">
+                                        <input (paste)="$event.preventDefault()" (cut)="$event.preventDefault()"
+                                            (copy)="$event.preventDefault()" matInput placeholder="password" name="pwd"
+                                            type="password" [formControl]="pwd">
+                                        <mat-error *ngIf="pwd.hasError('required')">
+                                            passsword is <strong>required</strong>
+                                        </mat-error>
+                                    </mat-form-field>
+                                    <div class="row col-lg-12">
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </div>
+                                </form>
+                                <div class="row col-lg-12"></div>
+                                <div *ngIf="log" class="alert alert-danger" style="margin-top:20%" role="alert">
+                                   {{err}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-7">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main> -->
+<html>
+<head>
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Web Admin| Miracle</title>
+<style>
+
+ * {
+	 box-sizing: border-box;
+}
+ .bg-black {
+	 background: black;
+	 height: 100%;
+}
+::placeholder {
+    color: #ffffff; 
+} 
+
+ @media (max-width: 320px) {
+	 .login-wrapper {
+		 min-height: 100vh !important;
+		 padding-top: 25vh;
+		background: linear-gradient( rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url('../../assets/login.jpeg');
+		 background-size: cover;
+		 background-position: center;
+	}
+	 .login-wrapper .black-banner {
+		background-color: #232527e0;
+	}
+	 .login-wrapper .black-banner .text-uppercase {
+		 font-size: 1em;
+	}
+	 .login-wrapper .black-banner .tag-line {
+		 font-size: 1em;
+		 margin-top: 4em;
+		 color: #00aae7;
+		 transform: scale(1.25,1.5);
+	}
+	 .login-wrapper .black-banner .tag-line .small {
+		 font-size: 12px !important;
+		 color: #fff;
+	}
+	 .login-wrapper .black-banner .login-section {
+		 margin-top: -4em;
+		 margin-bottom: -4em;
+		 padding: 1em;
+		 opacity: 0.95;
+	}
+	 .login-wrapper .black-banner .login-section .form-section {
+		 margin-top: 4em !important;
+	}
+	 .login-wrapper .border-bottom {
+		 border: none;
+		 border-bottom: 1px solid #8c8c8c !important;
+		 border-radius: 0;
+		 box-shadow: none;
+	}
+	 .login-wrapper .passwordlink {
+		 display: block;
+	}
+	.bg-miracle-light-blue {
+    background-color: #00aae7;
+}
+	
+}
+ @media (min-width: 321px) and (max-width: 575.98px) {
+	 .login-wrapper {
+		 min-height: 100vh !important;
+		 padding-top: 25vh;
+		background: linear-gradient( rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url('../../assets/login.jpeg');
+		 background-size: cover;
+		 background-position: center;
+	}
+	 .login-wrapper .black-banner {
+		background-color:#232527e0;
+
+	}
+	 .login-wrapper .black-banner .text-uppercase {
+		 font-size: 1em;
+	}
+	 .login-wrapper .black-banner .left-dark {
+		 font-size: 20px;
+		 margin-top: 45px;
+	}
+	 .login-wrapper .black-banner .left-dark .blue {
+		 color: #00aae7;
+	}
+	 .login-wrapper .black-banner .left-dark .small {
+		 font-size: 11px;
+	}
+	 .login-wrapper .black-banner .tag-line {
+		 font-size: 1em;
+		 margin-top: 4em;
+		 margin-right: 0.75em;
+		 color: #00aae7;
+		 transform: scale(1.5,1.75);
+	}
+	 .login-wrapper .black-banner .tag-line .small {
+		 font-size: 12px !important;
+		 color: #fff;
+	}
+	 .login-wrapper .black-banner .login-section {
+		 margin-top: -4em;
+		 margin-bottom: -4em;
+		 padding: 1em;
+		 opacity: 0.95;
+	}
+	 .login-wrapper .black-banner .login-section .form-section {
+		 margin-top: 4em !important;
+	}
+	 .login-wrapper .border-bottom {
+		 border: none;
+		 border-bottom: 1px solid #8c8c8c !important;
+		 border-radius: 0;
+		 box-shadow: none;
+	}
+	 .login-wrapper .passwordlink {
+		 display: block;
+		 margin-left: 2em;
+	}
+	.bg-miracle-light-blue {
+    background-color: #00aae7;
+}
+}
+ @media (min-width: 576px) and (max-width: 765.98px) {
+	 .login-wrapper {
+		 min-height: 100vh !important;
+		 padding-top: 25vh;
+		 background: linear-gradient( rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url('../../assets/login.jpeg');
+		 background-size: cover;
+		 background-position: center;
+	}
+	 .login-wrapper .black-banner {
+		background-color: #232527e0;
+	}
+	 .login-wrapper .black-banner .text-uppercase {
+		 font-size: 1em;
+	}
+	 .login-wrapper .black-banner .left-dark {
+		 font-size: 20px;
+		 margin-top: 45px;
+	}
+	 .login-wrapper .black-banner .left-dark .blue {
+		 color: #00aae7;
+	}
+	 .login-wrapper .black-banner .left-dark .small {
+		 font-size: 10px;
+	}
+	 .login-wrapper .black-banner .tag-line {
+		 font-size: 1em;
+		 margin-top: 4em;
+		 margin-right: 0.75em;
+		 color: #00aae7;
+		 transform: scale(1.5,1.75);
+	}
+	 .login-wrapper .black-banner .tag-line .small {
+		 font-size: 12px !important;
+		 color: #fff;
+	}
+	 .login-wrapper .black-banner .login-section {
+		 margin-top: -4em;
+		 margin-bottom: -4em;
+		 padding: 1em;
+		 opacity: 0.95;
+	}
+	 .login-wrapper .black-banner .login-section .form-section {
+		 margin-top: 4em !important;
+	}
+	 .login-wrapper .border-bottom {
+		 border: none;
+		 border-bottom: 1px solid #8c8c8c !important;
+		 border-radius: 0;
+		 box-shadow: none;
+	}
+	 .login-wrapper .passwordlink {
+		 display: block;
+		 margin-left: 2em;
+	}
+	.bg-miracle-light-blue {
+    background-color: #00aae7;
+}
+}
+ @media (min-width: 768px) and (max-width: 991.98px) {
+	 .login-wrapper {
+		 min-height: 100vh !important;
+		 padding-top: 25vh;
+	background: linear-gradient( rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url('../../assets/login.jpeg');
+		 background-size: cover;
+		 background-position: center;
+	}
+	 .login-wrapper .black-banner {
+		background-color: #232527e0;
+		 max-width: 38em;
+		 margin-left: 2em;
+	}
+	 .login-wrapper .black-banner .text-uppercase {
+		 font-size: 1em;
+	}
+	 .login-wrapper .black-banner .left-dark {
+		 font-size: 20px;
+		 margin-top: 45px;
+	}
+	 .login-wrapper .black-banner .left-dark .blue {
+		 color: #00aae7;
+	}
+	 .login-wrapper .black-banner .left-dark .small {
+		 font-size: 12px;
+	}
+	 .login-wrapper .black-banner .tag-line {
+		 font-size: 1em;
+		 margin-top: 4em;
+		 color: #00aae7;
+		 transform: scale(1.75,2.25);
+	}
+	 .login-wrapper .black-banner .tag-line .small {
+		 font-size: 12px !important;
+		 color: #fff;
+	}
+	 .login-wrapper .black-banner .login-section {
+		 margin-top: -4em;
+		 margin-bottom: -4em;
+		 padding: 1em;
+		 opacity: 0.95;
+		 max-width: 20em;
+		 margin-left: 5em;
+	}
+	 .login-wrapper .black-banner .login-section .form-section {
+		 margin-top: 4em !important;
+	}
+	 .login-wrapper .black-banner .login-section p {
+		 font-size: 14px !important;
+	}
+	 .login-wrapper .border-bottom {
+		 border: none;
+		 border-bottom: 1px solid #8c8c8c !important;
+		 border-radius: 0;
+		 box-shadow: none;
+	}
+	 .login-wrapper .passwordlink {
+		 display: inline;
+		 margin-left: 2em;
+	}
+	.bg-miracle-light-blue {
+    background-color: #00aae7;
+}
+}
+ @media (min-width: 992px) and (max-width: 1199.98px) {
+	 .login-wrapper {
+		 min-height: 100vh !important;
+		 padding-top: 25vh;
+		background: linear-gradient( rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url('../../assets/login.jpeg');
+		 background-size: cover;
+		 background-position: center;
+	}
+	 .login-wrapper .black-banner {
+	background-color: #232527e0;
+		 max-width: 40em;
+		 margin-left: 9em;
+	}
+	 .login-wrapper .black-banner .text-uppercase {
+		 font-size: 1em;
+	}
+	 .login-wrapper .black-banner .left-dark {
+		 font-size: 25px;
+		 margin-top: 45px;
+	}
+	 .login-wrapper .black-banner .left-dark .blue {
+		 color: #00aae7;
+	}
+	 .login-wrapper .black-banner .left-dark .small {
+		 font-size: 12px;
+	}
+	 .login-wrapper .black-banner .tag-line {
+		 font-size: 1em;
+		 margin-top: 4em;
+		 color: #00aae7;
+		 transform: scale(1.75,2.25);
+	}
+	 .login-wrapper .black-banner .tag-line .small {
+		 font-size: 12px !important;
+		 color: #fff;
+	}
+	 .login-wrapper .black-banner .login-section {
+		 margin-top: -4em;
+		 margin-bottom: -4em;
+		 padding: 1em;
+		 opacity: 0.95;
+		 max-width: 20em;
+		 margin-left: 5em;
+	}
+	 .login-wrapper .black-banner .login-section .form-section {
+		 margin-top: 4em !important;
+	}
+	 .login-wrapper .border-bottom {
+		 border: none;
+		 border-bottom: 1px solid #8c8c8c !important;
+		 border-radius: 0;
+		 box-shadow: none;
+	}
+	 .login-wrapper .passwordlink {
+		 display: inline;
+		 margin-left: 2em;
+	}
+	 .login-wrapper .user-img {
+		 display: block;
+	}
+	.bg-miracle-light-blue {
+    background-color: #00aae7;
+}
+}
+ @media (min-width: 1200px) {
+	 .login-wrapper {
+		 min-height: 100vh !important;
+		 padding-top: 25vh;
+	background: linear-gradient( rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url('../../assets/login.jpeg');
+		 background-size: cover;
+		 background-position: center;
+	}
+	 .login-wrapper .black-banner {
+		background-color:#232527e0;
+		 min-height: 400px;
+	}
+	 .login-wrapper .black-banner .left-dark {
+		 font-size: 35px;
+		 margin-top: 45px;
+	}
+	 .login-wrapper .black-banner .left-dark .blue {
+		 color: #00aae7;
+	}
+	 .login-wrapper .black-banner .left-dark .small {
+		 font-size: 12px;
+	}
+	 .login-wrapper .black-banner .text-uppercase {
+		 font-size: 1em;
+	}
+	 .login-wrapper .black-banner .tag-line {
+		 font-size: 2em;
+		 position: absolute;
+		 margin-top: 2em;
+		 color: #00aae7;
+	}
+	 .login-wrapper .black-banner .tag-line .small {
+		 font-size: 12px !important;
+		 color: #fff;
+	}
+	 .login-wrapper .black-banner .login-section {
+		 margin-top: -4em;
+		 margin-bottom: -4em;
+		 padding: 1em;
+		 opacity: 0.95;
+		 max-width: 25em;
+		 margin-left: 5em;
+	}
+	 .login-wrapper .black-banner .login-section .form-section {
+		 margin-top: 4em !important;
+	}
+	 .login-wrapper .border-bottom {
+		 border: none;
+		 border-bottom: 1px solid #8c8c8c !important;
+		 border-radius: 0;
+		 box-shadow: none;
+	}
+	 .login-wrapper .passwordlink {
+		 display: inline;
+		 margin-left: 5em;
+	}
+	.bg-miracle-light-blue {
+    background-color: #00aae7;
+}
+}
+ @media (min-width: 1900px) {
+	 .login-wrapper {
+		 min-height: 100vh !important;
+		 padding-top: 25vh;
+	background: linear-gradient( rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url('../../assets/login.jpeg');
+		 background-size: cover;
+		 background-position: center;
+	}
+	 .login-wrapper .black-banner {
+			background-color: #232527e0;
+	}
+	 .login-wrapper .black-banner .text-uppercase {
+		 font-size: 1.2em;
+	}
+	 .login-wrapper .black-banner .tag-line {
+		 font-size: 1em;
+		 margin-top: 5em;
+		 color: #00aae7;
+		 margin-left: 3em;
+		 transform: scale(2.25,2.5);
+	}
+	 .login-wrapper .black-banner .tag-line .small {
+		 font-size: 12px !important;
+		 color: #fff;
+	}
+	 .login-wrapper .black-banner .login-section {
+		 margin-top: -4em;
+		 margin-bottom: -4em;
+		 padding: 2em;
+		 opacity: 0.95;
+		 max-width: 25em;
+		 margin-left: 8em;
+	}
+	 .login-wrapper .black-banner .login-section .form-section {
+		 margin-top: 4em !important;
+	}
+	 .login-wrapper .border-bottom {
+		 border: none;
+		 border-bottom: 1px solid #8c8c8c !important;
+		 border-radius: 0;
+		 box-shadow: none;
+	}
+	 .login-wrapper .passwordlink {
+		 display: inline;
+		 margin-left: 5em;
+	}
+	.bg-miracle-light-blue {
+    background-color: #00aae7;
+}
+ .custom-control-label::before {
+   margin-top:-4px !important;
+}
+}
+ 
+</style>
+</head>
+<body>
+<div class="container-fluid login-wrapper">
+  <div class="main-section text-white pt-0" style="margin-top:-85px;">
+    <div class="row">
+      <div class="col-3"></div>
+      <div class="col-3 p-4  pb-5 black-banner">
+        
+        <div class="left-dark" style="font-family: 'Montserrat', sans-serif;margin-top:25%;text-align:right;">
+           <div class="text-white" style="font-size:25px;">Welcome to</div>
+		  <div class="text-white" style="font-size:27px;"><b><font color="#00aae7">Miracle's FB Agent</font> Portal</b></div>
+          <div class="small" style="margin-top:70%;">Built for <font color="#00aae7">Miracle</font> by Miracle</div>
+        </div>
+
+      </div>
+
+      <div class="col-3 p-4 pb-5 login-section text-center" style="background-color: #ffffff;">
+        <img src="../../assets/miracle-logo-dark.png" width="170px" class="mb-2 img-fluid" />
+        <p class="mt-4" style="font-family: 'Montserrat', sans-serif;color:#232527">Login to your account</p>
+        <div class="form-section mt-5">         
+          <form #login="ngForm" (ngSubmit)="onClickSubmit(login.value)" >
+            <div class="input-group mt-3">
+              <div class="input-group-prepend ">
+                <span class="input-group-text bg-transparent border-bottom">
+                  <i class="fa fa-fw fa-user-circle-o"></i>
+                </span>
+              </div>
+              <input name="email"
+              [formControl]="emailFormControl" style="color:#232527;font-family: 'Montserrat', sans-serif;font-size:13px;" type="text" class="form-control border-bottom bg-transparent" placeholder="Username" name="userid" autocomplete="off"
+                />
+            </div>
+
+            <div class="input-group mt-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text bg-transparent border-bottom">
+                  <i class="fa fa-fw fa-lock"></i>
+                </span>
+              </div>
+              <input (paste)="$event.preventDefault()" (cut)="$event.preventDefault()" (copy)="$event.preventDefault()" name="pwd" 
+              [formControl]="pwd" style="color:#232527;font-family: 'Montserrat', sans-serif;font-size:13px;" type="password" name="password" class="form-control border-bottom bg-transparent" placeholder="Password" autocomplete="off"
+                 />
+              <div class="input-group-append">
+                <span class="input-group-text bg-transparent border-bottom">
+                  <i class="fa fa-fw"></i>
+                </span>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn bg-miracle-light-blue text-white mt-4 w-100" style="font-family: 'Montserrat', sans-serif;">
+                Login
+                <span  class="fa fa-fw" ></span>
+              </button>
+            </div>
+         <div  class="small mt-4">
+			   <div  class="form-group row login-tools">
+				  <div  class="col-6 login-remember">
+					 <div class="custom-control custom-checkbox mb-3" style="margin-top:4px;"><input class="custom-control-input" id="customCheck" name="example1" type="checkbox"><label  class="custom-control-label" for="customCheck" style="font-size:13px;font-family: 'Montserrat', sans-serif;color:#71748d">Remember Me</label></div>
+				  </div>
+				  <div  class="col-6 pt-1 text-right login-forgot-password"><a  href="/forgot-password" style="font-family: 'Montserrat', sans-serif;color:#71748d">Forgot Password?</a></div>
+			   </div>
+			</div>
+          </form>
+        </div>
+ 
+ <div  class="small" style="color:#8c8c8c;margin-top:16%;">© 2019 Miracle Software Systems, Inc.</div>
+</div>
+      <div class="col-2"></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

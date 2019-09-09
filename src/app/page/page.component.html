@@ -1,0 +1,221 @@
+<!-- <div class="nav">
+  <span style="align-items: center;place-items: center center;width:90%">
+    <img src="./assets/PNG/mil-light-logo.png">
+    <span class="toptext"> <b>Live Agent Support for Miracle Chat Bot</b>     
+    </span>
+    <span class="glyphicon info" >Hi!{{agent}} | <span (click)="off()">Logout</span></span>
+  </span>  
+</div>
+<div class="bg">
+  <div id="img-bg">
+    <div class="col-sm-12" style="overflow: hidden;height:100%">
+      <div>
+        <div class="wrapper">
+          <div class="container1">
+            <div class="top">
+              <div class="nav1" style="height:100%;width:100%;overflow: hidden;">
+                <span style="float:left;width:36.4%;font-size: 25px;background-color: #0d416b">
+                  <div style="place-items:center center;height:66px;background-color: #0d416b">
+                    <img style="width: 70%;height: 75px;float: left;padding-left: 30px;    padding-bottom: 10px;"
+                      src="../../assets/Miracle-Logo-White.png">
+                  </div>
+                </span>
+                <span *ngIf="display" style="float:left;width:45%;height:100%;font-size: 25px;">
+                  <span></span>
+                  <img style="float:left;border-radius:100%;height:58%;margin-top:10px;margin-left: 10px;width:42px;"
+                    src={{dpic}}>&nbsp;
+                  <p style="float:left;margin-top:10px;margin-left: 10px;font-size:22px">{{dname}}</p>
+                </span>
+                <button *ngIf="display" type="button" class="btn btn-danger"
+                  style="margin-top:13px;float:right;margin-right: 13px;" (click)=end()>End chat</button>
+              </div>
+            </div>
+          </div>
+          <div class="container" style="top:22%;">
+            <div class=" left">
+              <p *ngIf="persons.length==0" style="margin-top:36%;padding: 90px; -webkit-text-fill-color: aliceblue">No
+                requests yet</p>
+              <div class="classleft">
+                <div class="people">
+                  <div *ngFor="let user of persons" (click)=userlog(user) class="person">
+                    <div>
+                      <img src={{user.profile_pic}} alt="" />
+                      <span class="name" id="user" name="user">{{user.first_name}}</span>
+                      <br>
+                      {{user.status}}
+                      <span *ngIf="user.status=='Accepted'">
+                        <img src="../../assets/64.png"
+                          style="margin-top: -15%;margin-left: 95%; width: 25px; height: 25px;">
+                      </span>
+                      <br>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            right chat window
+            <div class="right">
+              <div class="chat-box" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+                <div class="chat-box-main">
+                  <span *ngIf="messages.length==0"
+                    style="padding: 110px; margin-bottom: 22%;-webkit-text-fill-color: #919191">Please select a chat to
+                    start conversation</span>
+                  <ng-container *ngFor="let msg of messages">
+                    <div class="chat-message" [class.chat-message-received]="msg.type === 'received'"
+                      [class.chat-message-sent]="msg.type === 'sent'">
+                      <div>
+                        <div class="chat-message-text">
+                          {{msg.message}}{{msg.text}}
+                        </div>
+                      </div>
+                      <div class="chat-message-date">
+                        {{msg.date | date: 'short'}}
+                      </div>
+                    </div>
+                  </ng-container>
+                </div>
+              </div>
+              <div class="chat-box-footer">
+                <app-cp (send)="sendMessage($event)" [focus]="focus" autofocus></app-cp>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="background-color: #232527;height:7%;place-items:center center;text-align: center;padding:12px">
+  <span style="text-align: center;-webkit-text-fill-color:#fff;font-size:18px;"> <i> © 2019 Miracle Software
+      Systems,Inc.</i></span>
+</div> -->
+
+<html>
+   <head>
+    
+
+   </head>
+   <body>
+    <script>
+      function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+      </script>
+<!--     
+       <nav class="navbar navbar-inverse">
+           <div class="container-fluid">
+             <div class="navbar-header">
+               <a class="navbar-brand" href="#"><img src="../../assets/mil-light-logo.jpg" style="height:80px;margin-top: -18px;"></a>
+             </div>
+            <p class="para">Live Agent Support for Miracle Chatbot</p>
+      
+			<div style="position:absolute;right:4%;bottom:40%;color:#ffffff;top:26%">
+				<p>Manasa Sutapali</p>
+				<p style="font-size: 11px;margin-top: 6px;">Lead Researcher IOT</p>
+				
+			</div>
+			<div style="position:absolute;right:1%;bottom:40%;color:#ffffff;top:32%;cursor:pointer;">
+				<i class="fa fa-sign-out fa-2x" aria-hidden="true"></i>
+			</div>
+		
+			
+           </div>
+           
+         </nav> -->
+         <!-- <div class="topnav" id="myTopnav">
+          <a href="#home" class=""><img src="../../assets/PNG/mil-light-logo.png" style="height:80px;margin-top: -18px;"></a>
+          <a href="#news">News</a>
+          <a href="#contact">Contact</a>
+          <a href="#about">About</a>
+          <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+          </a>
+         
+        </div> -->
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#222!important;padding:0px !important" >
+            <a class="navbar-brand" href="javascript:void(0)"><img src="../../assets/PNG/mil-light-logo.png" style="height:65px;margin-top: -18px;"></a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navb" >
+              <ul class="navbar-nav mr-auto" style="margin:0 auto;color:#ffffff">
+                <li class="nav-item">
+                  <h5>Live agent for Miracle Chatbot</h5>
+                </li>
+                
+              </ul>
+              <form class="form-inline my-2 my-lg-0">
+                <p style="color:#ffffff;    margin-right: 13px;
+                margin-top: 3px;
+                padding-top: 10px;">{{agent}}<br><span style="font-size:13px;">{{agentskill}}</span></p>
+                <button (click)="off()" class="btn btn-primary my-2 my-sm-0" type="button"><i class="fa fa-sign-out" aria-hidden="true"></i></button>
+              </form>
+            </div>
+          </nav>
+ <div id="frame">    
+      <div id="sidepanel">
+            <div id="profile">
+               <div class="wrap">
+                  <img src="../../assets/miracle-logo.svg" height="60">
+               </div>
+            </div>
+
+            <div id="contacts">
+                <div *ngIf="persons.length==0" style="padding:55% 25%;font-family: cursive">No requests yet</div>       
+               <ul >
+                  <li class="contact" *ngFor="let user of persons" (click)=userlog(user) >
+                     <div class="wrap">
+                                      
+                        <img src="{{user.profile_pic}}" alt="" />
+                        <div class="meta name" >
+                           <p class="name">{{user.first_name}}</p>
+                           <p class="preview">{{user.status}}</p>
+                          <img *ngIf="user.status=='Accepted'" src="../../assets/64.png" class="image-check" style="float:right;margin-top:-37px;height:18px;width:18px;">
+                        </div>
+                     </div>
+                  </li>
+               </ul>
+            </div>
+         
+         </div>
+         <div *ngIf="persons.length==0" style="padding: 25% 10%;font-family: cursive;margin-left: 40%;">Select the user to start conversation</div>       
+         <div class="content" *ngIf="display">           
+            <div class="contact-profile">
+               <img src="{{dpic}}" alt="" />
+               <p>{{dname}}</p>
+               <div class="social-media">
+                 <button type="button" class="btn btn-primary" (click)=end() style="margin-top: -2px;margin-right: 17px;">End Chat</button>
+               </div>
+            </div>
+            <div class="messages messages1" #scrollMe [scrollTop]="scrollMe.scrollHeight" style="position:absolute;left:0;right:0" >
+               <ul >                                
+                  <li *ngFor='let msg of messages' [class.sent]="msg.type=='received'" [class.replies]="msg.type=='sent'">                                                                             
+                        <img *ngIf="msg.type=='sent'" src="../../assets/amelia.png" alt="" />
+                        <img *ngIf="msg.type=='received'" src="{{dpic}}" alt="" />
+                         <p class="texttime"> {{msg.text}}  <span class="texttime1"> {{msg.date | date: 'short'}}</span>  </p>                                            
+                  </li>                               
+                  
+               </ul>
+            </div>
+            <div class="message-input">
+               <div class="wrap">           
+                  <input autofocus type="text" class="chat-input-text" placeholder="Say something" #message (keydown.enter)="onSubmit()"
+                  (keyup.enter)="message.value = ''" (keyup.escape)="dismiss.emit()"/>                 
+                  <button class="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+   
+               </div>
+            </div>
+         </div>
+      </div>
+     <div class="footer">
+  <p style="margin-top:10px">© 2019 Miracle Software Systems, Inc.</p>
+</div>
+
+   </body>
+</html>

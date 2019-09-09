@@ -1,0 +1,11 @@
+input::-webkit-input-placeholder {
+    color: rgb(54, 54, 54);
+  }
+  
+  input::-moz-placeholder {
+    color: rgb(54, 54, 54);
+  }
+  
+  input::-ms-input-placeholder {
+    color: rgb(54, 54, 54);
+  }

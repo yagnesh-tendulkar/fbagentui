@@ -1,0 +1,42 @@
+/* 
+.nav{
+    margin-top:0%;
+    width:102%;
+    height:70px;
+  background-color:#232527;
+  
+  }
+  .nav img{
+  float:left;
+  height: 70px;
+  -moz-width:22%;
+  -webkit-width:12%;
+  
+  }
+  
+  #img-bg {
+    background: rgb(0, 0, 0,0.5);
+    height: 100% !important;
+    width: 100%;
+  
+  }
+  
+  .bg {
+    margin-top:0%;
+    background-image: url('https://myofficein.ph/wp-content/uploads/2017/08/How-Your-Office-Space-Affects-Your-Employees.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: fit-content !important;
+    height: 85%;
+    
+  }
+  .toptext{
+    width:100%;
+    -webkit-text-fill-color: mintcream;
+    font-size: 20px;
+    margin-left:27%;
+    position:fixed;
+    padding:15px;
+  } */

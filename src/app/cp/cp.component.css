@@ -1,0 +1,40 @@
+.chat-input-text {
+    margin: 10px 0 0 14px;
+    height: 25px;
+    width: 70%;
+    border: 0;
+    resize: none;
+    border: none;
+    overflow: auto;
+    outline: none;  
+    caret-color: #0d416b;  
+    box-shadow: none;
+    font-size: 14px;
+    background-color: #fff;
+    color: inherit;
+    -webkit-text-fill-color: rgb(0, 0, 0);;
+}
+
+.chat-input-text::-webkit-input-placeholder {
+    color: rgb(184, 184, 184);
+}
+
+.chat-input-text::-moz-placeholder {
+    color: rgb(184, 184, 184);
+}
+
+.chat-input-text::-ms-input-placeholder {
+    color: rgb(184, 184, 184);
+}
+
+.chat-input-submit {
+    /* margin: 1px 0px; */
+    float: right;
+    /* background-color: inherit; */
+    /* color: inherit; */
+    height:40px;
+    width:45px;
+    font-size: 20px;
+    border: none;
+    outline: none;
+}

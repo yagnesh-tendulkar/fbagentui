@@ -1,0 +1,6 @@
+<textarea autofocus type="text" class="chat-input-text" placeholder="Say something" #message (keydown.enter)="onSubmit()"
+  (keyup.enter)="message.value = ''" (keyup.escape)="dismiss.emit()" autofocus></textarea>
+<button style="background-color: #0d416b" type="submit" class="chat-input-submit" (click)="onSubmit()">
+    <span class="glyphicon glyphicon-send" ></span>
+</button>
+ 
